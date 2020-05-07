@@ -15,12 +15,17 @@ test('should critical', () => {
     expect(received).toBe('critical');
 })
 
-test('should errow', () => {
+test('should killed', () => {
     const received = showHealth({name: 'Маг', health: 'mistake'});
-    expect(received).toBe('errow');
+    expect(received).toBe('killed');
 })
 
-test('should errow', () => {
+test('should killed', () => {
     const received = showHealth({});
-    expect(received).toBe('errow');
+    expect(received).toBe('killed');
+})
+
+test('should killed', () => {
+    const received = showHealth({name: 'Маг', health: -10});
+    expect(received).toBe('killed');
 })
